@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Workerman小蝌蚪互动聊天室 </title>
+		<title>小蝌蚪互动聊天室 </title>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />		
     <meta name="apple-mobile-web-app-capable" content="YES">
@@ -16,6 +16,13 @@
 	<body>
 		<canvas id="canvas"></canvas>
 		
+		<!--公告-->
+		<div style="width:100%;top:2px;left:0;position:absolute;">
+			<marquee scrollamount="2" onMouseOut="this.start()" onMouseOver="this.stop()" >
+				<div style="color:#fff"><font color=red>&#9829;公告 </font>欢迎来到小蝌蚪互动聊天室，请文明用语！祝大家聊得开心！ ------北极星(Tandaly)</div>
+			</marquee>
+		</div>	
+
 		<div id="ui">
 			<div id="fps"></div>
 			<input id="chat" type="text" />
@@ -48,7 +55,7 @@
             </aside>
 		
 			<div id="cant-connect">
-				与服务器断开连接了。您可以重新刷新页面。
+				与服务器断开连接了。您可以重新刷新页面或者检测是否连接到互联网。
 			</div>
 			<div id="unsupported-browser">
 				<p>
