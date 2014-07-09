@@ -107,7 +107,7 @@ var App = function(aSettings, aCanvas) {
 	    messageQuota--;
                 msg = $.trim(msg);
                 if(msg.indexOf("name:") != -1){
-                    msg = "name:♥ " + msg.substring(5);
+                    msg = "name:♥" + msg.substring(5) + "♥";
                 }
 	    webSocketService.sendMessage(msg);
 	  }
