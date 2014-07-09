@@ -20,7 +20,6 @@
 			<div id="fps"></div>
 			<input id="chat" type="text" />
 			<div id="chatText"></div>
-			<h1>workerman</h1>
 			<div id="instructions">
 				<h2>介绍</h2>
 				<p>直接打字聊天!<br />输入 name: XX 则会设置你的昵称为XX</p>
@@ -96,5 +95,31 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5fedb3bdce89499492c079ab4a8a0323' type='text/javascript'%3E%3C/script%3E"));
 </script>
 		
+
+		<!--鼠标左键显示积分-->
+<script type="text/javascript">
+$("html,body").click(function(e){
+    anp(e);
+});
+
+function anp(e){
+    var n=Math.round(Math.random()*10);
+    var $i=$("<b>").html("<font size=28>♥</font>"); //"E94F06"
+    var x=e.pageX,y=e.pageY;
+    $i.css({top:y-20,left:x,position:"absolute",color:"#"+(Math.random()*0xfff<<0).toString(16)});
+    $("body").append($i);
+    $i.animate({top:y-400,opacity:0,"font-size":"24px"},1500,function(){
+        $i.remove();
+    });
+    e.stopPropagation();
+}
+</script>
+
+<!--百度统计-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb5b71592574767d796a6f654023dbba6' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
 	</body>
 </html>
