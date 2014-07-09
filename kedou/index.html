@@ -19,7 +19,7 @@
 		<!--公告-->
 		<div style="width:100%;top:2px;left:0;position:absolute;">
 			<marquee scrollamount="2" onMouseOut="this.start()" onMouseOver="this.stop()" >
-				<div style="color:#fff"><font color=red>&#9829;公告 </font>欢迎来到小蝌蚪互动聊天室，请文明用语！祝大家聊得开心！ ------北极星(Tandaly)</div>
+				<div style="color:#fff"><font color=red>&#9829;公告&#9829; </font>欢迎来到小蝌蚪互动聊天室，请文明用语！祝大家聊得开心！ ------北极星(<a href="http://tandaly.github.com" target="_blank">Tandaly</a>)</div>
 			</marquee>
 		</div>	
 
@@ -33,6 +33,9 @@
 			</div>
 			<aside id="info">
 			<section id="share">
+				<div style="color:#fff;">
+				<a href="javascript:leaveComment();">留言</a> |
+				&copy; 2014</div>
 			</section>
 			<section id="wtf">
 			
@@ -102,7 +105,60 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5fedb3bdce89499492c079ab4a8a0323' type='text/javascript'%3E%3C/script%3E"));
 </script>
 		
+<!-- add-->		
+<div id="leaveComment" style="width:80%;height:500px;top:50px;left:80px;position:absolute;z-index:1120;background-color:#fff;padding:10px;display:none;">
+	<!-- <iframe src="http://www.baidu.com" width="100%" height="100%" ></iframe> -->
+	<!-- 多说评论框 start -->
+        <div class="ds-thread" data-thread-key="gh_kedou" data-title="在线互动游戏" data-url="http://tandaly.github.com/games/kedou/index.html"></div>
+      <!-- 多说评论框 end -->
+      <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+      <script type="text/javascript">
+      var duoshuoQuery = {short_name:"tandalygithub"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
+          ds.charset = 'UTF-8';
+          (document.getElementsByTagName('head')[0] 
+           || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+        </script>
+      <!-- 多说公共JS代码 end -->
+</div>
+<div id="modal" class="modal-backdrop fade in" style="display:none;"></div>
+<style type="text/css">
+	.modal-backdrop.in {
+		opacity: .5;
+		filter: alpha(opacity=50);
+	}
 
+	.modal-backdrop {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1030;
+		background-color: #73808c;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+		$("#modal").click(function(){
+			$("#modal").hide();
+			$("#leaveComment").hide();
+			$("#chat").show();
+		});
+		//$("#frogMode").hide();
+	})
+	//留言
+	function leaveComment(){ 
+		$("#modal").show();
+		$("#leaveComment").height($(window).height() * 0.8).show();
+		$("#chat").hide();
+	}
+
+</script>
 		<!--鼠标左键显示积分-->
 <script type="text/javascript">
 $("html,body").click(function(e){
