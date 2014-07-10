@@ -61,7 +61,7 @@
             </aside>
 		
 			<div id="cant-connect">
-				与服务器断开连接了。您可以重新刷新页面或者检测是否连接到互联网。
+				与服务器断开连接了。您可以点击<a href="javascript:location.href=location.href;">刷新</a>页面或者检测是否连接到互联网。
 			</div>
 			<div id="unsupported-browser">
 				<p>
@@ -144,21 +144,8 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 		background-color: #73808c;
 	}
 </style>
-<!-- <script type="text/javascript" src="./js/jquery.hotkeys.js"></script>  -->
 <script type="text/javascript">
 	$(function(){
-        /*
-                       $(document).bind("keydown.Alt_-", function(evt){
-                            t_maxMomentum-=5;
-                            if(t_maxMomentum < 3)t_maxMomentum = 3;
-                            $("#speed").html(t_maxMomentum);
-                        });
-                        $(document).bind("keydown.Alt_+", function(evt){
-                             t_maxMomentum+=5;
-                             if(t_maxMomentum > 30)t_maxMomentum = 30;
-                             $("#speed").html(t_maxMomentum);
-                        });
-*/
 		$("#modal").click(function(){
 			$("#modal").hide();
 			$("#leaveComment").hide();
