@@ -31,12 +31,14 @@
 			<div id="instructions">
 				<h2>介绍</h2>
 				<p>直接打字聊天!<br />输入 name: XX 则会设置你的昵称为XX</p>
+                                                    <p>Ctrl：加速 &nbsp;&nbsp;Alt：减速</p>
+                                                    <p>当前速度：<span id="speed">5</span></p>
 			</div>
 			<aside id="info">
-			<section id="share">
-				<div style="color:#fff;">
+			<section id="share" style="color:#fff;">
+                                                    <span style="padding-right:100px;"></span>
 				<font size=4 ><a href="javascript:leaveComment();">在线留言</a></font> |
-				&copy; 2014</div>
+				&copy; 2014
 			</section>
 			<section id="wtf">
 			
@@ -109,7 +111,7 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 <div id="leaveComment" style="width:80%;height:500px;top:50px;left:80px;position:absolute;z-index:1120;background-color:#fff;padding:10px;OVERFLOW-Y: auto; OVERFLOW-X:hidden;display:none;">
 	<!-- <iframe src="http://www.baidu.com" width="100%" height="100%" ></iframe> -->
 	<!-- 多说评论框 start -->
-        <div class="ds-thread" data-thread-key="gh_kedou" data-title="在线互动游戏" data-url="http://tandaly.github.io/game/kedou"></div>
+        <div class="ds-thread" data-thread-key="gh_kedou" data-title="在线互动聊天" data-url="http://tandaly.github.io/game/kedou"></div>
       <!-- 多说评论框 end -->
       <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
       <script type="text/javascript">
@@ -142,18 +144,21 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 		background-color: #73808c;
 	}
 </style>
-<script type="text/javascript" src="./js/jquery.hotkeys.js"></script> 
+<!-- <script type="text/javascript" src="./js/jquery.hotkeys.js"></script>  -->
 <script type="text/javascript">
 	$(function(){
+        /*
                        $(document).bind("keydown.Alt_-", function(evt){
                             t_maxMomentum-=5;
                             if(t_maxMomentum < 3)t_maxMomentum = 3;
+                            $("#speed").html(t_maxMomentum);
                         });
                         $(document).bind("keydown.Alt_+", function(evt){
                              t_maxMomentum+=5;
                              if(t_maxMomentum > 30)t_maxMomentum = 30;
+                             $("#speed").html(t_maxMomentum);
                         });
-
+*/
 		$("#modal").click(function(){
 			$("#modal").hide();
 			$("#leaveComment").hide();

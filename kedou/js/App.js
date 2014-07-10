@@ -1,4 +1,4 @@
-var t_maxMomentum = 8;//tan
+var t_maxMomentum = 5;//tan
 
 var App = function(aSettings, aCanvas) {
 	var app = this;
@@ -166,6 +166,17 @@ var App = function(aSettings, aCanvas) {
 			keyNav.x = 1;
 			model.userTadpole.momentum = model.userTadpole.targetMomentum = model.userTadpole.maxMomentum;
 			e.preventDefault();
+		}
+
+		//tan
+		if(e.keyCode == 17){
+			t_maxMomentum-=1;
+			if(t_maxMomentum < 3)t_maxMomentum = 3;
+			$("#speed").html(t_maxMomentum);
+		}else if(e.keyCode == 18){
+			t_maxMomentum+=1;
+			if(t_maxMomentum > 30)t_maxMomentum = 30;
+			$("#speed").html(t_maxMomentum);
 		}
 	};
 	app.keyup = function(e) {
