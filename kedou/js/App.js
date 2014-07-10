@@ -1,4 +1,4 @@
-
+var t_maxMomentum = 8;//tan
 
 var App = function(aSettings, aCanvas) {
 	var app = this;
@@ -31,7 +31,9 @@ var App = function(aSettings, aCanvas) {
 			model.userTadpole.changed = 0;
 			webSocketService.sendUpdate(model.userTadpole);
 		}
-		
+		//debugger;
+		model.userTadpole.maxMomentum = t_maxMomentum;
+		//console.log(model);
 		model.camera.update(model);
 		
 		// Update tadpoles
@@ -105,10 +107,12 @@ var App = function(aSettings, aCanvas) {
 	  
 	  if (messageQuota>0) {
 	    messageQuota--;
+	    //tan start
                 msg = $.trim(msg);
                 if(msg.indexOf("name:") != -1){
                     msg = "name:♥" + msg.substring(5) + "♥";
                 }
+                //tan end
 	    webSocketService.sendMessage(msg);
 	  }
 	  

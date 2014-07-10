@@ -1,3 +1,4 @@
+
 workerman-todpole
 =================
 
@@ -23,3 +24,13 @@ workerman-todpole
 ===================
 本程序是由 [Rumpetroll](http://rumpetroll.com) 修改而来。非常感谢Rumpetroll出色的工作。  
 原 [Repo: https://github.com/danielmahal/Rumpetroll](https://github.com/danielmahal/Rumpetroll)
+
+
+
+
+待开发功能
+===
+
+- 加速功能
+
+
