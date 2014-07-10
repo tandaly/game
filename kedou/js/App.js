@@ -1,5 +1,6 @@
 var t_maxMomentum = 5;//tan
 var currentTadpole =  new Array();//tan
+var isMater = false;
 
 var App = function(aSettings, aCanvas) {
 	var app = this;
@@ -57,14 +58,15 @@ var App = function(aSettings, aCanvas) {
 	
 	
 	
-	app.draw = function() {
+	app.draw = function() { 
 		model.camera.setupContext();
 		
 		// Draw waterParticles
 		for(i in model.waterParticles) {
 			model.waterParticles[i].draw(context);
 		}
-		
+		drawR(context);//tan
+		//drawStar(context);
 		// Draw tadpoles
 		var personnelNum = 0;
 		for(id in model.tadpoles) {
@@ -274,5 +276,56 @@ var App = function(aSettings, aCanvas) {
 		webSocket.onmessage 	= app.onSocketMessage;
 		
 		webSocketService		= new WebSocketService(model, webSocket);
+
+		
 	})();
 }
+
+function drawR(context){
+	var g1 = context.createRadialGradient(200, 150, 0, 200, 150, 140);
+             g1.addColorStop(0.1, 'rgb(255,0,0)');  
+              g1.addColorStop(1, 'rgb(50,0,0)');
+             context.fillStyle = g1;
+             context.beginPath();
+             context.arc(200, 200, 140, 0, Math.PI * 2, true);
+             context.closePath();
+             context.fill();
+
+	isMater = true;
+}
+
+function create5Star(context) {
+            var n = 0;
+            var dx = 0;
+            var dy = -200;
+
+            var s = 50;
+            //创建路径
+            context.beginPath();
+            context.fillStyle = 'rgba(255,0,0,0.5)';
+             var x = Math.sin(0);
+             var y = Math.cos(0);
+             var dig = Math.PI / 5 * 4;
+             for (var i = 0; i < 5; i++) {
+                 var x = Math.sin(i * dig);
+                 var y = Math.cos(i * dig);
+                 context.lineTo(dx + x * s, dy + y * s);
+ 
+             }
+             context.closePath();
+ 
+         }
+ 
+         function drawStar(context) {
+             context.shadowOffsetX = 10;
+             context.shadowOffsetY = 10;
+             context.shadowColor = 'rgba(100,100,100,0.5)';
+             context.shadowBlur =5;
+             //图形绘制
+             context.translate(0, 50);
+             for (var i = 0; i < 3; i++) {
+                 context.translate(50, 50);
+                 create5Star(context);
+                 context.fill();
+             }
+         }

@@ -146,6 +146,9 @@ var Tadpole = function() {
 		
 		drawName(context);
 		drawMessages(context);
+
+
+		
 	};
 	
 	var isAuthorized = function() {
@@ -165,6 +168,7 @@ var Tadpole = function() {
 		context.textBaseline = 'hanging';
 		var width = context.measureText(tadpole.name).width;
 		context.fillText(tadpole.name, tadpole.x - width/2, tadpole.y + 8);
+		
 	}
 	
 	var drawMessages = function(context) {
