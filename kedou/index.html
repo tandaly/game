@@ -18,7 +18,7 @@
 		<canvas id="canvas"></canvas>
 		
 		<!--公告-->
-		<div style="width:100%;top:2px;left:0;position:absolute;">
+		<div style="width:100%;top:5px;left:0;position:absolute;">
 			<marquee scrollamount="2" onMouseOut="this.start()" onMouseOver="this.stop()" >
 				<div style="color:#fff"><font color=red>&#9829;公告&#9829; </font>欢迎来到小蝌蚪互动聊天室，请文明用语！祝大家聊得开心！ ------北极星(<a href="http://tandaly.github.com" target="_blank">Tandaly</a>)</div>
 			</marquee>
@@ -29,10 +29,11 @@
 			<input id="chat" type="text" />
 			<div id="chatText"></div>
 			<div id="instructions">
-				<h2>介绍</h2>
+				<h2>参数</h2>
 				<p>直接打字聊天!<br />输入 name: XX 则会设置你的昵称为XX</p>
                                                     <p>按Ctrl加速; &nbsp;&nbsp;按Alt减速</p>
                                                     <p>当前速度：<span id="speed">5</span></p>
+                                                    <p>在线人数：<span id="personnelNum">0</span></p>
 			</div>
 			<aside id="info">
 			<section id="share" style="color:#fff;">
@@ -103,7 +104,7 @@
 		<script src="js/Cookie.js"></script>
 		<script src="js/main.js"></script>
 		
-        
+
 <!--tan add-->		
 <div id="leaveComment" style="width:80%;height:500px;top:50px;left:80px;position:absolute;z-index:1120;background-color:#fff;padding:10px;OVERFLOW-Y: auto; OVERFLOW-X:hidden;display:none;">
 	<!-- <iframe src="http://www.baidu.com" width="100%" height="100%" ></iframe> -->

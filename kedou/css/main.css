@@ -226,7 +226,7 @@ a#force-init-button:hover {
 #instructions {
 	position: absolute;
 	top: 30px;
-	right: 60px;
+	left: 30px;
 }
 
 #fwa {

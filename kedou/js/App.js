@@ -1,4 +1,5 @@
 var t_maxMomentum = 5;//tan
+var currentTadpole =  new Array();//tan
 
 var App = function(aSettings, aCanvas) {
 	var app = this;
@@ -65,10 +66,13 @@ var App = function(aSettings, aCanvas) {
 		}
 		
 		// Draw tadpoles
+		var personnelNum = 0;
 		for(id in model.tadpoles) {
+			personnelNum++;
 			model.tadpoles[id].draw(context);
 		}
-		
+		$("#personnelNum").html(personnelNum);//tan
+		currentTadpole.name = model.userTadpole.name;//tan
 		// Start UI layer (reset transform matrix)
 		model.camera.startUILayer();
 		

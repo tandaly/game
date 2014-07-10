@@ -113,12 +113,18 @@ var Tadpole = function() {
 	this.draw = function(context) {
 		var opacity = Math.max(Math.min(20 / Math.max(tadpole.timeSinceLastServerUpdate-300,1),1),.2).toFixed(3);
 
-		if(tadpole.hover && isAuthorized()) {
+		//if(tadpole.hover && isAuthorized()) {
+		if(tadpole.hover) {
 			context.fillStyle = 'rgba(192, 253, 247,'+opacity+')';
 			// context.shadowColor   = 'rgba(249, 136, 119, '+opacity*0.7+')';
 		}
 		else {
-			context.fillStyle = 'rgba(226,219,226,'+opacity+')';
+			//context.fillStyle = 'rgba(226,219,226,'+opacity+')';
+			if(currentTadpole.name === tadpole.name){//自己
+				context.fillStyle = 'rgba(226,219,0,'+opacity+')';
+			}else{
+				context.fillStyle = 'rgba(0,219,226,'+opacity+')';
+			}
 		}
 		
 		context.shadowOffsetX = 0;
@@ -148,7 +154,13 @@ var Tadpole = function() {
 	
 	var drawName = function(context) {
 		var opacity = Math.max(Math.min(20 / Math.max(tadpole.timeSinceLastServerUpdate-300,1),1),.2).toFixed(3);
-		context.fillStyle = 'rgba(226,219,226,'+opacity+')';
+		//context.fillStyle = 'rgba(226,219,226,'+opacity+')';
+		if(currentTadpole.name === tadpole.name){
+			context.fillStyle = 'rgba(226,219,0,'+opacity+')';//tan
+		}else{
+			context.fillStyle = 'rgba(0,219,226,'+opacity+')';//tan
+		}
+
 		context.font = 7 + "px 'proxima-nova-1','proxima-nova-2', arial, sans-serif";
 		context.textBaseline = 'hanging';
 		var width = context.measureText(tadpole.name).width;
