@@ -169,12 +169,12 @@ var App = function(aSettings, aCanvas) {
 		}
 
 		//tan
-		if(e.keyCode == 17){
+		if(e.keyCode === 17){
 			t_maxMomentum-=1;
 			if(t_maxMomentum < 3)t_maxMomentum = 3;
 			$("#speed").html(t_maxMomentum);
-		}else if(e.keyCode == 18){
-			t_maxMomentum+=1;
+		}else if(e.keyCode === 18){
+			t_maxMomentum+=2;
 			if(t_maxMomentum > 30)t_maxMomentum = 30;
 			$("#speed").html(t_maxMomentum);
 		}
