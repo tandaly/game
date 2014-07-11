@@ -16,7 +16,6 @@ var WebSocketService = function(model, webSocket) {
 		$('#chat').initChat();
 		var todpole_name = $.cookie('todpole_name');
 		if(todpole_name)	{
-			alert(todpole_name.indexOf("♥"));
 			if(todpole_name.indexOf("♥") != 0){
 				todpole_name = "♥" + todpole_name + "♥";
 			}
