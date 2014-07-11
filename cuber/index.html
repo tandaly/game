@@ -95,5 +95,13 @@
 			<h2>Cubers broken</h2>
 		</div>
 		
+                        <div style="position:absolute; top:10px;left:10px;">
+                            <input type="button" value="上一步" onclick="cube.undo();" />
+                            <input type="button" value="下一步" onclick="cube.redo();" />
+                            <input type="button" value="洗牌" onclick="cube.shuffle(15);" />
+                            <input type="button" value="U" onclick="cube.twist('U');" />
+                            <input type="button" value="UDLF" onclick="cube.twist('UDLF');" />
+                            <input type="button" value="DUFL" onclick="cube.twist('DUFL');" />
+                        </div>
 	</body>
 </html>
