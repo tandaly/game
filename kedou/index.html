@@ -13,6 +13,8 @@
 		<meta name="title" content="Workerman-todpole!" />
 		<meta name="description" content="小蝌蚪交互游戏程序 ，坐标实时推送、实时聊天等" />
 		<link rel="image_src" href="images/fb-image.jpg" />
+                        <!--tan add-->  
+                        <link rel="stylesheet" type="text/css" href="myextends/myextends.css">
 	</head>
 	<body>
 		<canvas id="canvas"></canvas>
@@ -29,15 +31,22 @@
 			<input id="chat" type="text" />
 			<div id="chatText"></div>
 			<div id="instructions">
-				<h2>参数</h2>
-				<p>直接打字聊天!<br />输入 name: XX 则会设置你的昵称为XX</p>
+				<h2>说明</h2>
+                                                    <p>直接打字聊天!<br />输入 name: XX 则会设置你的昵称为XX</p>
                                                     <p>按Ctrl加速; &nbsp;&nbsp;按Alt减速</p>
-                                                    <p>当前速度：<span id="speed">5</span></p>
-                                                    <p>在线人数：<span id="personnelNum">0</span></p>
 			</div>
+                                       <div id="paramInfos">
+                                            <h2>实时参数</h2>
+                                            <p>当前速度：<span id="speed">8</span></p>
+                                            <p>在线人数：<span id="personnelNum">0</span></p>
+                                        </div>
 			<aside id="info">
 			<section id="share" style="color:#fff;">
-                                                    <span style="padding-right:100px;"></span>
+                                                    <span style="padding-right:50px;">
+                                                        <!-- start 访问统计 -->
+                                                        <script src="http://count.2881.com/count/count.asp?id=52099&sx=2&ys=41" language="JavaScript" charset="gb2312"></script>
+                                                        <!-- end 访问统计 -->
+                                                    </span>
 				<font size=4 ><a href="javascript:leaveComment();">在线留言</a></font> |
 				&copy; 2014
 			</section>
@@ -106,83 +115,8 @@
 		
 
 <!--tan add-->		
-<div id="leaveComment" style="width:80%;height:500px;top:50px;left:80px;position:absolute;z-index:1120;background-color:#fff;padding:10px;OVERFLOW-Y: auto; OVERFLOW-X:hidden;display:none;">
-	<!-- <iframe src="http://www.baidu.com" width="100%" height="100%" ></iframe> -->
-	<!-- 多说评论框 start -->
-        <div class="ds-thread" data-thread-key="gh_kedou" data-title="在线互动聊天" data-url="http://tandaly.github.io/game/kedou"></div>
-      <!-- 多说评论框 end -->
-      <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-      <script type="text/javascript">
-      var duoshuoQuery = {short_name:"tandalygithub"};
-        (function() {
-          var ds = document.createElement('script');
-          ds.type = 'text/javascript';ds.async = true;
-          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
-          ds.charset = 'UTF-8';
-          (document.getElementsByTagName('head')[0] 
-           || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-        </script>
-      <!-- 多说公共JS代码 end -->
-</div>
-<div id="modal" class="modal-backdrop fade in" style="display:none;"></div>
-<style type="text/css">
-	.modal-backdrop.in {
-		opacity: .5;
-		filter: alpha(opacity=50);
-	}
+<script src="myextends/myextends.js"></script>
 
-	.modal-backdrop {
-		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: 1030;
-		background-color: #73808c;
-	}
-</style>
-<script type="text/javascript">
-	$(function(){
-		$("#modal").click(function(){
-			$("#modal").hide();
-			$("#leaveComment").hide();
-			$("#chat").show().focus();
-		});
-		//$("#frogMode").hide();
-	})
-	//留言
-	function leaveComment(){ 
-		$("#modal").show();
-		$("#leaveComment").height($(window).height() * 0.8).show();
-		$("#chat").hide();
-	}
-
-</script>
-		<!--鼠标左键显示积分-->
-<script type="text/javascript">
-$("html,body").click(function(e){
-    anp(e);
-});
-
-function anp(e){
-    var n=Math.round(Math.random()*10);
-    var $i=$("<b>").html("<font size=28>♥</font>"); //"E94F06"
-    var x=e.pageX,y=e.pageY;
-    $i.css({top:y-20,left:x,position:"absolute",color:"#"+(Math.random()*0xfff<<0).toString(16)});
-    $("body").append($i);
-    $i.animate({top:y-400,opacity:0,"font-size":"24px"},1500,function(){
-        $i.remove();
-    });
-    e.stopPropagation();
-}
-</script>
-
-<!--百度统计-->
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb5b71592574767d796a6f654023dbba6' type='text/javascript'%3E%3C/script%3E"));
-</script>
 
 	</body>
 </html>

@@ -25,7 +25,8 @@ var WaterParticle = function() {
 		context.fillStyle = 'rgba(226,219,226,'+wp.opacity+')';
 		//context.fillStyle = '#fff';
 		context.beginPath();
-		context.arc(wp.x, wp.y, this.z * this.size, 0, Math.PI*2, true);
+		context.arc(wp.x, wp.y, this.z * this.size+1, 0, Math.PI*2, true);
+		//context.arc(wp.x,  wp.y, this.z * this.size*5, 0, Math.PI * 2, true);
 		context.closePath();
 		context.fill();
 	};

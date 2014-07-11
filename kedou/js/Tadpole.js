@@ -3,10 +3,13 @@ var Tadpole = function() {
 	
 	this.x = Math.random() * 300 - 150;
 	this.y = Math.random() * 300 - 150;
-	this.size = 4;
+	this.size = 8;
 	
 	this.name = '';
 	this.age = 0;
+	this.sex = 0; //0:女 1：男
+	this.icon = '/images/default.png';
+	this.img = {};
 	
 	this.hover = false;
 
@@ -118,12 +121,16 @@ var Tadpole = function() {
 			context.fillStyle = 'rgba(192, 253, 247,'+opacity+')';
 			// context.shadowColor   = 'rgba(249, 136, 119, '+opacity*0.7+')';
 		}
-		else {
+		else { 
 			//context.fillStyle = 'rgba(226,219,226,'+opacity+')';
 			if(currentTadpole.name === tadpole.name){//自己
-				context.fillStyle = 'rgba(226,219,0,'+opacity+')';
+				context.fillStyle = 'rgba(255,0,0,'+opacity+')';
+			}else if(tadpole.sex === 0){//女
+				context.fillStyle = 'rgba(255,0,255,'+opacity+')';
+			}else if(tadpole.sex === 1){//男
+				context.fillStyle = 'rgba(0,0,205,'+opacity+')';
 			}else{
-				context.fillStyle = 'rgba(0,219,226,'+opacity+')';
+				context.fillStyle = 'rgba(0,0,0,'+opacity+')';
 			}
 		}
 		

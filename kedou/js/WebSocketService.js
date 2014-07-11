@@ -14,8 +14,15 @@ var WebSocketService = function(model, webSocket) {
 		delete model.tadpoles[-1];
 		
 		$('#chat').initChat();
-		if($.cookie('todpole_name'))	{
-			webSocketService.sendMessage('name:'+$.cookie('todpole_name'));
+		var todpole_name = $.cookie('todpole_name');
+		if(todpole_name)	{
+			alert(todpole_name.indexOf("♥"));
+			if(todpole_name.indexOf("♥") != 0){
+				todpole_name = "♥" + todpole_name + "♥";
+			}
+			webSocketService.sendMessage('name:'+todpole_name);
+		}else{
+			webSocketService.sendMessage("name:♥游客♥");
 		}
 	};
 	
@@ -95,7 +102,9 @@ var WebSocketService = function(model, webSocket) {
 			x: tadpole.x.toFixed(1),
 			y: tadpole.y.toFixed(1),
 			angle: tadpole.angle.toFixed(3),
-			momentum: tadpole.momentum.toFixed(3)
+			momentum: tadpole.momentum.toFixed(3),
+			sex: tadpole.sex,
+			size: tadpole.size
 		};
 		
 		if(tadpole.name) {
