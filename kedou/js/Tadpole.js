@@ -7,7 +7,7 @@ var Tadpole = function() {
 	
 	this.name = '';
 	this.age = 0;
-	this.sex = 0; //0:女 1：男
+	this.sex = 1; //0:女 1：男
 	this.icon = '/images/default.png';
 	this.img = {};
 	
