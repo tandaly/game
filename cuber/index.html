@@ -12,7 +12,11 @@
 		<link rel="stylesheet" type="text/css" href="examples/basic/styles/base.css">
 		<link rel="icon" type="image/png" href="build/media/cuber-favicon-0064x0064.png">
 		<link rel="apple-touch-icon" href="build/media/cuber-favicon-0144x0144.png">
-
+                            <style type="text/css">
+                                #toolsInput input{
+                                    margin-right: 10px;
+                                }
+                            </style>
 
 		<title>Cuber</title>
 
@@ -95,15 +99,14 @@
 			<h2>Cubers broken</h2>
 		</div>
 		
-                        <div style="position:absolute; top:10px;left:10px;">
-                            <input type="button" value="上一步" onclick="cube.undo();" />
+                        <div id="toolsInput" style="position:absolute; top:10px;left:10px;">
+                            <input type="button" value="上一步" onclick="cube.undo();" />  
                             <input type="button" value="下一步" onclick="cube.redo();" />
                             <input type="button" value="洗牌" onclick="cube.shuffle(15);" />
                             <br/>
                             <input type="button" value="F" onclick="cube.twist('F');" />
                             <input type="button" value="S" onclick="cube.twist('S');" />
                             <input type="button" value="B" onclick="cube.twist('B');" />
-                            <br/>
                             <input type="button" value="U" onclick="cube.twist('U');" />
                             <input type="button" value="E" onclick="cube.twist('E');" />
                             <input type="button" value="D" onclick="cube.twist('D');" />
@@ -111,7 +114,6 @@
                             <input type="button" value="R" onclick="cube.twist('R');" />
                             <input type="button" value="M" onclick="cube.twist('M');" />
                             <input type="button" value="L" onclick="cube.twist('L');" />
-                            <br/>
                             <input type="button" value="X" onclick="cube.twist('X');" />
                             <input type="button" value="Y" onclick="cube.twist('Y');" />
                             <input type="button" value="Z" onclick="cube.twist('Z');" />
