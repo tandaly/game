@@ -6,7 +6,7 @@ var currentTadpole =  new Array();//tan
 
 
 $(function(){
-    $("#modal").click(function(){
+    $("#modal").click(function(){  
         $("#modal").hide();
         $("#leaveComment").hide();
         $("#chat").show().focus();
